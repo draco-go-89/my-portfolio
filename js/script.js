@@ -1,9 +1,21 @@
-// Mobile navbar toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+// Mobile navbar toggle - Fixed with DOM ready and debug
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (hamburger && navLinks) {
+    console.log('Hamburger and navLinks found');
+    hamburger.addEventListener('click', () => {
+      console.log('Hamburger clicked');
+      navLinks.classList.toggle('active');
+      console.log('Nav active:', navLinks.classList.contains('active'));
+    });
+    
+    // Close on outside click
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  } else {
+    console.error('Hamburger or navLinks not found');
+  }
 });
 
 // Navbar scroll effect
