@@ -380,6 +380,7 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
+  
 }
 
 /* Responsive */
@@ -399,7 +400,7 @@ section {
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.98);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     width: 100%;
@@ -415,10 +416,16 @@ section {
   }
 
   .nav-links a {
-    color: #333 !important;
+    color: #fff !important;
     font-size: 1.2rem;
     padding: 1rem;
     font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #ffd700 !important;
+    transform: scale(1.1);
   }
 
   .hero-content h1 {
@@ -732,7 +739,7 @@ section {
           <p>I am constantly learning new frameworks and tools to stay ahead of the curve.</p>
           <p>Driven by a long-term vision to build something impactful and achieve something truly great in the tech industry.</p>
         </div>
-        <img src="dhrubo.jpeg" alt="Profile" class="profile-img">
+        <img src="assets/dhrubo.jpeg" alt="Profile" class="profile-img">
       </div>
     </div>
   </section>
@@ -744,20 +751,20 @@ section {
       <div class="projects-grid">
         <!-- Top Left: To Do List -->
         <div class="project-card">
-          <img src="todo.jpeg" alt="To Do List App" class="project-img">
+          <img src="assets/todo.jpeg" alt="To Do List App" class="project-img">
           <div class="project-info">
             <h3>To Do List App</h3>
             <p>A modern To-Do/Task Manager app built with smart alarm system that helps you do your daily task in time.</p>
             <div class="project-links">
               <a href="https://github.com/draco-go-89/To-Do-List">Live Demo</a>
               <a href="https://github.com/draco-go-89">GitHub</a>
-              <a href="todolist.apk">Install APK</a>
+              <a href="builds/todolist.apk">Install APK</a>
             </div>
           </div>
         </div>
         <!-- Top Right: Password Checker -->
         <div class="project-card">
-          <img src="passwordchecker.png" alt="Password Checker" class="project-img">
+          <img src="assets/passwordchecker.png" alt="Password Checker" class="project-img">
           <div class="project-info">
             <h3>Password Checker</h3>
             <p>This website checks the strength of a password, categorizing it as "Normal", "Strong", or "Hard".</p>
@@ -769,18 +776,18 @@ section {
         </div>
         <!-- Bottom Left: Music Player V2 -->
         <div class="project-card">
-          <img src="musicplayer.jpeg" alt="Music Player V2" class="project-img">
+          <img src="assets/musicplayer.jpeg" alt="Music Player V2" class="project-img">
           <div class="project-info">
             <h3>Music Player V2</h3>
             <p>A simple Music Player App built by me.</p>
             <div class="project-links">
-              <a href="Lubo_v4.apk">Install APK</a>
+              <a href="builds/Lubo_v4.apk">Install APK</a>
             </div>
           </div>
         </div>
         <!-- Bottom Right: Music Player App -->
         <div class="project-card">
-          <img src="musicplayer.jpeg" alt="Music Player App" class="project-img">
+          <img src="assets/musicplayer.jpeg" alt="Music Player App" class="project-img">
           <div class="project-info">
             <h3>Music Player App</h3>
             <p>A simple Music Player app built by me. This app has a password protection login system which makes the app unique to other Music Players.</p>
