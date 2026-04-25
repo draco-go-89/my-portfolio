@@ -1,7 +1,11 @@
+// Global variables
+let hamburger;
+let navLinks;
+
 // Mobile navbar toggle - Fixed with DOM ready and debug
 document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  hamburger = document.querySelector('.hamburger');
+  navLinks = document.querySelector('.nav-links');
   
   if (hamburger && navLinks) {
     console.log('Hamburger and navLinks found');
@@ -12,10 +16,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Close on outside click
-
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
   } else {
     console.error('Hamburger or navLinks not found');
   }
+
+  // Smooth scrolling for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+      // Close mobile menu
+      if (navLinks) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
 });
 
 // Navbar scroll effect
@@ -26,22 +52,6 @@ window.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('scrolled');
   }
-});
-
-// Smooth scrolling for nav links
-document.querySelectorAll('a[href^=\"#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-    // Close mobile menu
-    navLinks.classList.remove('active');
-  });
 });
 
 // Form submission
@@ -85,10 +95,3 @@ const skillsSection = document.querySelector('#skills');
 if (skillsSection) {
   observer.observe(skillsSection);
 }
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-    navLinks.classList.remove('active');
-  }
-});

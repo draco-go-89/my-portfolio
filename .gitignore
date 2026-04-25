@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.code-workspace
+.hintrc
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Build artifacts
+dist/
+build/
+*.apk
+*.exe
+
+# Environment
+.env
+.env.local
+
+# TODO files (local planning)
+TODO*.md
