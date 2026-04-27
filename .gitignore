@@ -38,9 +38,6 @@ docs/TODO*.md
 *.temp
 *.bak
 
-# Images not part of portfolio assets
-assets/palette.png
-
 # Large media
 *.mp4
 *.mov
