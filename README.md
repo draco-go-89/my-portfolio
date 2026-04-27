@@ -81,17 +81,18 @@ Portfolio/
 │
 ├── 📁 assets/                 # Image assets
 │   ├── dhrubo.jpeg            # Profile photo
+│   ├── palette.png            # Color palette reference
 │   ├── todo.jpeg              # To-Do List screenshot
 │   ├── passwordchecker.png    # Password Checker screenshot
 │   └── musicplayer.jpeg       # Music Player screenshot
 │
-├── 📁 builds/                 # Compiled APK builds
+├── 📁 builds/                 # Compiled APK builds (gitignored)
 │   ├── Lubo_v4.apk            # Music Player V2
 │   ├── musicplayer1.apk       # Music Player App
 │   └── todolist.apk           # To-Do List App
 │
-├── 📁 css/                    # Stylesheets (if separated)
-├── 📁 docs/                   # Additional documentation
+├── 📁 css/                    # Stylesheets
+│   └── style.css              # Main stylesheet (glassmorphism theme)
 │
 └── 📁 js/
     └── script.js              # Main JavaScript file
