@@ -2,6 +2,7 @@
 node_modules/
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
 
 # IDE & Editor
 .vscode/
@@ -21,10 +22,26 @@ dist/
 build/
 *.apk
 *.exe
+*.msi
+*.dmg
 
 # Environment
 .env
 .env.local
+.env.development
+.env.production
 
-# TODO files (local planning)
+# Local planning / temp files
 TODO*.md
+docs/TODO*.md
+*.tmp
+*.temp
+*.bak
+
+# Images not part of portfolio assets
+assets/palette.png
+
+# Large media
+*.mp4
+*.mov
+*.avi
