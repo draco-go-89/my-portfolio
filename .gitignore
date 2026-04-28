@@ -20,7 +20,6 @@ Thumbs.db
 # Build artifacts
 dist/
 build/
-*.apk
 *.exe
 *.msi
 *.dmg
