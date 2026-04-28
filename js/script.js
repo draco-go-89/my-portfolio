@@ -95,3 +95,20 @@ const skillsSection = document.querySelector('#skills');
 if (skillsSection) {
   observer.observe(skillsSection);
 }
+
+// Videos page animations
+const videosSection = document.querySelector('#videos');
+if (videosSection) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const videoCards = entry.target.querySelectorAll('.video-card');
+        videoCards.forEach((card, index) => {
+          card.style.animationDelay = `${0.2 + index * 0.2}s`;
+          card.classList.add('animate-in');
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+  videoObserver.observe(videosSection);
+}

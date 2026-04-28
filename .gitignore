@@ -38,6 +38,5 @@ docs/TODO*.md
 *.bak
 
 # Large media
-*.mp4
 *.mov
 *.avi
