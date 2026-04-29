@@ -8,11 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   navLinks = document.querySelector('.nav-links');
   
   if (hamburger && navLinks) {
-    console.log('Hamburger and navLinks found');
     hamburger.addEventListener('click', () => {
-      console.log('Hamburger clicked');
       navLinks.classList.toggle('active');
-      console.log('Nav active:', navLinks.classList.contains('active'));
     });
     
     // Close on outside click
@@ -21,20 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.remove('active');
       }
     });
-  } else {
-    console.error('Hamburger or navLinks not found');
   }
 
-  // Smooth scrolling for nav links
+  // Enhanced smooth scrolling for nav links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      const target = document.querySelector(href);
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        smoothScrollTo(target.offsetTop - 80, 1000);
       }
       // Close mobile menu
       if (navLinks) {
@@ -44,7 +37,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Navbar scroll effect
+// Custom 144Hz smooth scroll polyfill with RAF
+function smoothScrollTo(target, duration = 1200) {
+  const start = window.pageYOffset;
+  const distance = target - start;
+  const startTime = performance.now();
+
+  function animation(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeProgress = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+
+    window.scrollTo(0, start + distance * easeProgress);
+
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// Navbar scroll effect with parallax
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) {
