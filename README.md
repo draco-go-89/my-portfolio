@@ -182,6 +182,8 @@ copies or substantial portions of the Software.
 
 ---
 
+this README isn't fully up-to-date sorry!
+
 <div align="center">
 
 **⭐ Star this repo if you found it helpful!**
