@@ -182,7 +182,7 @@ copies or substantial portions of the Software.
 
 ---
 
-this README isn't fully up-to-date sorry!
+this README isn't fully up-to-date because im so lazy sorry!
 
 <div align="center">
 
