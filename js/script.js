@@ -1,11 +1,13 @@
 // Global variables
 let hamburger;
 let navLinks;
+let bird;
 
 // Mobile navbar toggle - Fixed with DOM ready and debug
 document.addEventListener('DOMContentLoaded', function() {
   hamburger = document.querySelector('.hamburger');
   navLinks = document.querySelector('.nav-links');
+  bird = document.getElementById('bird');
   
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
@@ -58,15 +60,68 @@ function smoothScrollTo(target, duration = 1200) {
   requestAnimationFrame(animation);
 }
 
-// Navbar scroll effect with parallax
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  // Navbar scroll effect with parallax
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    
+    // Fast bird movement on scroll
+    if (bird) {
+      const scrollY = window.scrollY;
+      const maxY = Math.sin(scrollY * 0.01) * 30;
+      const maxX = Math.cos(scrollY * 0.005) * 20;
+      bird.style.transform = `translateX(${maxX}px) translateY(${maxY}px) rotateZ(${Math.sin(scrollY * 0.002) * 5}deg)`;
+    }
+  });
+  
+  // Smart bird: Flee mouse/touch + scroll flight
+  let mouseX = 0, mouseY = 0;
+  
+  // Mouse
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  // Touch support (mobile)
+  document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    mouseX = touch.clientX;
+    mouseY = touch.clientY;
+  });
+  
+  function updateBird() {
+    if (bird) {
+      const rect = bird.getBoundingClientRect();
+      const birdCenterX = rect.left + rect.width / 2;
+      const birdCenterY = rect.top + rect.height / 2;
+      
+      // Mouse/touch flee
+      const dx = mouseX - birdCenterX;
+      const dy = mouseY - birdCenterY;
+      const distance = Math.sqrt(dx*dx + dy*dy);
+      
+      let fleeX = 0, fleeY = 0;
+      if (distance < 120) {
+        fleeX = (dx / distance) * 80 * (1 - distance/120); // Stronger closer
+        fleeY = (dy / distance) * 80 * (1 - distance/120);
+      }
+      
+      // Scroll flight (continuous)
+      const scrollY = window.scrollY * 0.02;
+      const scrollX = Math.sin(scrollY * 0.1) * 15;
+      
+      bird.style.transform = `translateX(${fleeX + scrollX}px) translateY(${fleeY + Math.sin(scrollY)*8}px) rotateZ(${Math.sin(Date.now() * 0.008 + scrollY)*12}deg)`;
+    }
+    requestAnimationFrame(updateBird);
   }
-});
+  updateBird();
+
+
 
 // Form submission
 const contactForm = document.querySelector('.contact-form');
