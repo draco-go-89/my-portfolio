@@ -53,6 +53,9 @@ body {
   transform: translateZ(0);
   will-change: transform;
   position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .flying-bird {
@@ -124,6 +127,8 @@ a { text-decoration: none; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ── Glassmorphism Utilities ── */
@@ -1092,8 +1097,17 @@ section {
 }
 
 @media (max-width: 480px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
   .container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+    max-width: 100%;
+  }
+  
+  * {
+    max-width: 100%;
   }
   
   .hero-content h1 {
@@ -1130,11 +1144,15 @@ section {
   }
   
   .back-to-top {
-    bottom: 15px;
+    bottom: env(safe-area-inset-bottom);
     right: 15px;
     width: 42px;
     height: 42px;
     font-size: 14px;
+  }
+  
+  .navbar {
+    padding: 0.75rem 0;
   }
 }
 
