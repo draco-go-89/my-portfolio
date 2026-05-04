@@ -1,12 +1,20 @@
-# TODO: Add Faah sound on bird touch
+# Glassmorphism CSS Update to Match Reference Repo
 
-## Steps
+Status: In Progress
 
-- [x] 1. Add Audio globals and debounce to js/script.js
-- [x] 2. Add pointerenter event listener to bird
-- [x] 3. Implement playFaah function
-- [x] 4. Test: Confirmed - mouse/touch bird triggers flee + Faah sound (debounced, pointerenter despite movement)
+## Steps:
 
-- [ ] 5. Mark complete, attempt_completion
+### 1. Create TODO.md [COMPLETED]
 
-All steps complete: Faah.mp3 plays once (2s debounce) on pointerenter/touch to bird, works with flee animation.
+### 2. Update CSS Variables in css/style.css ✓ COMPLETED
+
+### 3. Update Hero Background ✓ COMPLETED
+
+### 4. Update Glass Classes ✓ COMPLETED
+
+### 5. Update Navbar, About, Projects, Skills, Contact, Footer, Social ✓ COMPLETED
+
+### 6. Minor HTML adjustments if needed ✓ COMPLETED
+
+### 7. Test & Complete ✓ COMPLETED
+
