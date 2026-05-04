@@ -26,9 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
   navLinks = document.querySelector('.nav-links');
   bird = document.getElementById('bird');
   
-  // Bird touch sound
+  // Bird play button
   if (bird) {
-    bird.addEventListener('pointerenter', playFaah);
+    bird.style.pointerEvents = 'auto';
+    bird.style.cursor = 'pointer';
+    bird.addEventListener('click', playFaah);
+    bird.addEventListener('touchstart', playFaah);
   }
   
   if (hamburger && navLinks) {
