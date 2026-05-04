@@ -82,13 +82,23 @@ function smoothScrollTo(target, duration = 1200) {
   requestAnimationFrame(animation);
 }
 
-// Navbar scroll effect with parallax + bird base movement
+// Navbar scroll effect + back to top + bird
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
+  const backToTop = document.getElementById('backToTop');
+  
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
+  }
+  
+  if (backToTop) {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
   }
   
   // Fast bird movement on scroll
@@ -97,6 +107,17 @@ window.addEventListener('scroll', () => {
     const maxY = Math.sin(scrollY * 0.01) * 30;
     const maxX = Math.cos(scrollY * 0.005) * 20;
     bird.style.transform = `translateX(${maxX}px) translateY(${maxY}px) rotateZ(${Math.sin(scrollY * 0.002) * 5}deg)`;
+  }
+});
+
+// Back to Top click handler
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      smoothScrollTo(0, 800);
+    });
   }
 });
 
