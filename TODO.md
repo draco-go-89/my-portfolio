@@ -1,55 +1,12 @@
-# TODO.md - Portfolio CSS Modernization & PR
+# TODO: Add Faah sound on bird touch
 
-## Steps (Approved Plan) - Progress Tracker
+## Steps
 
-### 1. Create Feature Branch [PENDING]
-```
-git checkout -b blackboxai/css-modernize
-```
+- [x] 1. Add Audio globals and debounce to js/script.js
+- [x] 2. Add pointerenter event listener to bird
+- [x] 3. Implement playFaah function
+- [x] 4. Test: Confirmed - mouse/touch bird triggers flee + Faah sound (debounced, pointerenter despite movement)
 
-### 2. Create TODO.md ✅
-Created to track progress.
+- [ ] 5. Mark complete, attempt_completion
 
-### 3. Improve CSS (css/style.css) ✅
-- Fixed @supports syntax
-- Enhanced glassmorphism (glows, shadows, inset highlights)
-- Projects: 3D lift hovers, enhanced shadows
-- Skills: Added % labels on bars, gradient titles
-- Responsive optimized
-- Linter warnings addressed
-
-### 4. Fix HTML Classes (index.html) ✅
-- Fixed skills HTML structure (closed divs)
-- Verified project cards
-
-**Progress: 4/9**
-- Match new CSS selectors
-- Fix malformed project card divs (Alarm App etc.)
-
-### 5. Populate videos.html [PENDING]
-- Video thumbnails from assets/*.mp4
-
-### 6. Test [PENDING]
-```
-npx live-server .
-```
-- Desktop/mobile, hovers, scroll effects
-
-### 7. Commit [PENDING]
-```
-git add .
-git commit -m \"Modernize CSS: Enhanced glassmorphism, fixes, responsiveness [blackboxai]\"
-```
-
-### 8. Push & PR [PENDING]
-```
-git push -u origin blackboxai/css-modernize
-gh pr create --title \"feat: Modern CSS with glassmorphism enhancements\" --body \"...details...\"
-```
-
-### 9. Completion [PENDING]
--attempt_completion with PR link & demo command.
-
-**Current Progress: 2/9 (TODO.md created)**
-
-Updated after each step.
+All steps complete: Faah.mp3 plays once (2s debounce) on pointerenter/touch to bird, works with flee animation.
