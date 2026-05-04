@@ -997,30 +997,147 @@ section {
   }
 }
 
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
   }
-  .hero-content p {
-    font-size: 1rem;
+
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: var(--glass-blur) saturate(180%);
+    backdrop-filter: var(--glass-blur) saturate(180%);
+    width: 100%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    transition: var(--transition-fast);
+    padding: 2rem 0;
+    z-index: 1000;
+    gap: 0;
+    border-top: 1px solid var(--glass-border);
   }
-  .cta-btn {
-    padding: 0.85rem 2rem;
-    font-size: 0.95rem;
+
+  .nav-links.active {
+    left: 0;
   }
-  .profile-img {
-    max-width: 260px;
+
+  .nav-links li {
+    padding: 1rem 0;
   }
-  .project-img {
-    height: 180px;
+
+  .nav-links a {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: var(--transition-fast);
   }
-  .project-info {
+
+  .nav-links a:hover {
+    color: var(--primary);
+    transform: scale(1.05);
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 70px;
+  }
+
+  .video-info {
     padding: 1.4rem;
   }
-  .footer {
-    padding: 2.5rem 0 1.5rem;
+
+  .page-header {
+    padding: 120px 0 50px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .contact-form {
+    padding: 1.8rem;
+  }
+
+  .social-links {
+    gap: 1.2rem;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-link span {
+    font-size: 0.7rem;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+  
+  .cta-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .profile-img {
+    max-width: 220px;
+  }
+  
+  .project-img {
+    height: 160px;
+  }
+  
+  .project-info, .video-info {
+    padding: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+  
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+  }
+}
+
 
 /* Back to Top Button */
 .back-to-top {
