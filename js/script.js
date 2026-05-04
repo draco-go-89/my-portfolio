@@ -3,11 +3,36 @@ let hamburger;
 let navLinks;
 let bird;
 
+// Faah sound globals
+let faahSound = new Audio('assets/Faah.mp3');
+faahSound.preload = 'auto';
+faahSound.volume = 0.7;
+let lastFaahTime = 0;
+const FAH_MIN_INTERVAL = 2000; // 2 seconds debounce
+
+// Play Faah sound with debounce (global function)
+function playFaah() {
+  const now = Date.now();
+  if (now - lastFaahTime > FAH_MIN_INTERVAL) {
+    faahSound.currentTime = 0;
+    faahSound.play().catch(e => console.log('Audio play failed:', e));
+    lastFaahTime = now;
+  }
+}
+
 // Mobile navbar toggle - Fixed with DOM ready and debug
 document.addEventListener('DOMContentLoaded', function() {
   hamburger = document.querySelector('.hamburger');
   navLinks = document.querySelector('.nav-links');
   bird = document.getElementById('bird');
+  
+  // Bird play button
+  if (bird) {
+    bird.style.pointerEvents = 'auto';
+    bird.style.cursor = 'pointer';
+    bird.addEventListener('click', playFaah);
+    bird.addEventListener('touchstart', playFaah);
+  }
   
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
@@ -60,68 +85,89 @@ function smoothScrollTo(target, duration = 1200) {
   requestAnimationFrame(animation);
 }
 
-  // Navbar scroll effect with parallax
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
+// Navbar scroll effect + back to top + bird
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  const backToTop = document.getElementById('backToTop');
+  
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  
+  if (backToTop) {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
     } else {
-      navbar.classList.remove('scrolled');
+      backToTop.classList.remove('show');
     }
-    
-    // Fast bird movement on scroll
-    if (bird) {
-      const scrollY = window.scrollY;
-      const maxY = Math.sin(scrollY * 0.01) * 30;
-      const maxX = Math.cos(scrollY * 0.005) * 20;
-      bird.style.transform = `translateX(${maxX}px) translateY(${maxY}px) rotateZ(${Math.sin(scrollY * 0.002) * 5}deg)`;
-    }
-  });
+  }
   
-  // Smart bird: Flee mouse/touch + scroll flight
-  let mouseX = 0, mouseY = 0;
-  
-  // Mouse
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-  
-  // Touch support (mobile)
-  document.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
+  // Fast bird movement on scroll
+  if (bird) {
+    const scrollY = window.scrollY;
+    const maxY = Math.sin(scrollY * 0.01) * 30;
+    const maxX = Math.cos(scrollY * 0.005) * 20;
+    bird.style.transform = `translateX(${maxX}px) translateY(${maxY}px) rotateZ(${Math.sin(scrollY * 0.002) * 5}deg)`;
+  }
+});
+
+// Back to Top click handler
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      smoothScrollTo(0, 800);
+    });
+  }
+});
+
+// Smart bird: Flee mouse/touch + scroll flight
+let mouseX = 0, mouseY = 0;
+
+// Mouse
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// Touch support (mobile)
+document.addEventListener('touchmove', (e) => {
+  const touch = e.touches[0];
+  if (touch) {
     mouseX = touch.clientX;
     mouseY = touch.clientY;
-  });
-  
-  function updateBird() {
-    if (bird) {
-      const rect = bird.getBoundingClientRect();
-      const birdCenterX = rect.left + rect.width / 2;
-      const birdCenterY = rect.top + rect.height / 2;
-      
-      // Mouse/touch flee
-      const dx = mouseX - birdCenterX;
-      const dy = mouseY - birdCenterY;
-      const distance = Math.sqrt(dx*dx + dy*dy);
-      
-      let fleeX = 0, fleeY = 0;
-      if (distance < 120) {
-        fleeX = (dx / distance) * 80 * (1 - distance/120); // Stronger closer
-        fleeY = (dy / distance) * 80 * (1 - distance/120);
-      }
-      
-      // Scroll flight (continuous)
-      const scrollY = window.scrollY * 0.02;
-      const scrollX = Math.sin(scrollY * 0.1) * 15;
-      
-      bird.style.transform = `translateX(${fleeX + scrollX}px) translateY(${fleeY + Math.sin(scrollY)*8}px) rotateZ(${Math.sin(Date.now() * 0.008 + scrollY)*12}deg)`;
-    }
-    requestAnimationFrame(updateBird);
   }
-  updateBird();
+});
 
-
+function updateBird() {
+  if (bird) {
+    const rect = bird.getBoundingClientRect();
+    const birdCenterX = rect.left + rect.width / 2;
+    const birdCenterY = rect.top + rect.height / 2;
+    
+    // Mouse/touch flee
+    const dx = mouseX - birdCenterX;
+    const dy = mouseY - birdCenterY;
+    const distance = Math.sqrt(dx*dx + dy*dy);
+    
+    let fleeX = 0, fleeY = 0;
+    if (distance < 120) {
+      fleeX = (dx / distance) * 80 * (1 - distance/120); // Stronger closer
+      fleeY = (dy / distance) * 80 * (1 - distance/120);
+    }
+    
+    // Scroll flight (continuous)
+    const scrollY = window.scrollY * 0.02;
+    const scrollX = Math.sin(scrollY * 0.1) * 15;
+    
+    bird.style.transform = `translateX(${fleeX + scrollX}px) translateY(${fleeY + Math.sin(scrollY)*8}px) rotateZ(${Math.sin(Date.now() * 0.008 + scrollY)*12}deg)`;
+  }
+  requestAnimationFrame(updateBird);
+}
+updateBird();
 
 // Form submission
 const contactForm = document.querySelector('.contact-form');
@@ -181,3 +227,4 @@ if (videosSection) {
   }, { threshold: 0.1 });
   videoObserver.observe(videosSection);
 }
+

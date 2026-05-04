@@ -56,14 +56,18 @@ body {
 
 .flying-bird {
   position: fixed;
-  width: 35px;
-  height: 25px;
-  pointer-events: none;
+  width: 45px;
+  height: 35px;
+  cursor: pointer;
   z-index: 9999;
   top: 30vh;
   left: 10vw;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
   transition: transform 0.1s ease-out;
+}
+
+.flying-bird:hover {
+  filter: drop-shadow(0 4px 12px rgba(74, 144, 226, 0.4));
 }
 
 .bird-svg {
@@ -943,5 +947,50 @@ section {
   }
   .footer {
     padding: 2.5rem 0 1.5rem;
+  }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: var(--transition);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 35px rgba(124, 77, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
   }
 }
