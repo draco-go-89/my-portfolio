@@ -10,7 +10,6 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-[🌐 Live Demo](https://draco-go-89.github.io/my-portfolio) · [📂 GitHub](https://github.com/draco-go-89/) ·
 
 </div>
 
@@ -34,21 +33,6 @@
 This is my personal portfolio website built to showcase my journey as a **B.Tech Computer Science and Engineering** student and software developer. The site features a sleek **glassmorphism UI** with smooth animations, responsive design, and a curated collection of my projects.
 
 > *"I thrive on vibe coding — combining my technical foundation in Python, C++, and Java with modern AI-driven workflows to build projects at lightning speed."*
-
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| 🎨 **Glassmorphism UI** | Modern frosted-glass design with backdrop filters and gradient accents |
-| 📱 **Fully Responsive** | Optimized for desktop, tablet, and mobile devices |
-| 🍔 **Hamburger Menu** | Smooth mobile navigation with animated toggle |
-| ✨ **Scroll Animations** | Intersection Observer-based skill bar animations |
-| 🎯 **Smooth Scrolling** | Anchor link navigation with smooth scroll behavior |
-| 📝 **Contact Form** | Client-side validated form with user feedback |
-| 🌙 **Dynamic Navbar** | Background transition on scroll for better visibility |
-| ⚡ **Performance** | Lightweight vanilla JS — no heavy frameworks |
 
 ---
 
@@ -182,7 +166,8 @@ copies or substantial portions of the Software.
 
 ---
 
-this README isn't fully up-to-date because im so lazy sorry!
+this README isn't fully up-to-date because im so lazy sorry! 
+last update 03-05-26
 
 <div align="center">
 
