@@ -1,194 +1,49 @@
-﻿<div align="center">
+﻿# Dhrubo's Chill Portfolio
 
-# 🚀 Dhrubo Basumatary — Portfolio
+Hey, this is my simple glassmorphism portfolio site. Shows my projects, about me, contact stuff. Built with vibe coding.
 
-**A modern, glassmorphism-inspired personal portfolio website showcasing projects, skills, and contact information.**
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
-[🌐 Live Demo](https://draco-go-89.github.io/my-portfolio) · [📂 GitHub](https://github.com/draco-go-89/) ·
-
-</div>
+Live demo: https://draco-go-89.github.io/my-portfolio  
+GitHub: https://github.com/draco-go-89
 
 ---
 
-## 📋 Table of Contents
+## Quick Info
 
-- [About](#-about)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Projects Showcase](#-projects-showcase)
-- [Getting Started](#-getting-started)
-- [Socials](#-socials)
-- [License](#-license)
 
----
+B.Tech CSE student into vibe coding. Python/C++/Java + AI tools. Glassmorphism UI that's responsive, smooth scrolls, animations, contact form. No fancy frameworks, just vanilla JS.
 
-## 🎯 About
+*"I thrive on vibe coding — lightning fast projects!"*
 
-This is my personal portfolio website built to showcase my journey as a **B.Tech Computer Science and Engineering** student and software developer. The site features a sleek **glassmorphism UI** with smooth animations, responsive design, and a curated collection of my projects.
 
-> *"I thrive on vibe coding — combining my technical foundation in Python, C++, and Java with modern AI-driven workflows to build projects at lightning speed."*
+## Tech
+- HTML/CSS/JS (vanilla + Bootstrap bits)
+- Glassmorphism + gradients
+- Git/VSCode
+
+Files: index.html, style.css, script.js, assets/images/apks.
 
 ---
 
-## ✨ Features
 
-| Feature | Description |
-|---------|-------------|
-| 🎨 **Glassmorphism UI** | Modern frosted-glass design with backdrop filters and gradient accents |
-| 📱 **Fully Responsive** | Optimized for desktop, tablet, and mobile devices |
-| 🍔 **Hamburger Menu** | Smooth mobile navigation with animated toggle |
-| ✨ **Scroll Animations** | Intersection Observer-based skill bar animations |
-| 🎯 **Smooth Scrolling** | Anchor link navigation with smooth scroll behavior |
-| 📝 **Contact Form** | Client-side validated form with user feedback |
-| 🌙 **Dynamic Navbar** | Background transition on scroll for better visibility |
-| ⚡ **Performance** | Lightweight vanilla JS — no heavy frameworks |
+## Projects
+- To Do List App: tasks + alarms (Android APK in builds/todolist.apk)
+- Password Checker: strength check site https://passwordchecker-v1.vercel.app/
+- Music Player V2: simple app (builds/Lubo_v4.apk)
+- Music Player: protected (Drive link)
 
----
+## Run It
+Just open index.html in browser. Or use live-server/python http.server.
 
-## 🛠️ Tech Stack
 
-**Frontend**
-- HTML5 Semantic Markup
-- CSS3 (Custom Properties, Flexbox, Grid, Animations)
-- JavaScript (ES6+, DOM API, Intersection Observer)
-- Bootstrap 5.3.3 (Grid & Utilities)
+## Socials
+- Instagram: https://instagram.com/___lubolabao.1___
+- Facebook: https://facebook.com/lubolabao.1
+- GitHub: https://github.com/draco-go-89
+- LinkedIn: https://linkedin.com/in/dhrubo-basumatary-82279934b
+- YouTube: https://youtube.com/@lubolabao
 
-**Design**
-- Glassmorphism aesthetic
-- Gradient color scheme (Blue/Purple tones)
-- Custom SVG social icons
+MIT license - do what you want.
 
-**Tools**
-- Git & GitHub
-- VS Code
+this README isn't fully up-to-date because im so lazy sorry! 😎
 
----
-
-## 📁 Project Structure
-
-```
-Portfolio/
-├── 📄 index.html              # Main portfolio page
-├── 📄 README.md               # Project documentation
-├── 📄 .gitignore              # Git ignore rules
-│
-├── 📁 assets/                 # Image assets
-│   ├── dhrubo.jpeg            # Profile photo
-│   ├── palette.png            # Color palette reference
-│   ├── todo.jpeg              # To-Do List screenshot
-│   ├── passwordchecker.png    # Password Checker screenshot
-│   └── musicplayer.jpeg       # Music Player screenshot
-│
-├── 📁 builds/                 # Compiled APK builds (gitignored)
-│   ├── Lubo_v4.apk            # Music Player V2
-│   ├── musicplayer1.apk       # Music Player App
-│   └── todolist.apk           # To-Do List App
-│
-├── 📁 css/                    # Stylesheets
-│   └── style.css              # Main stylesheet (glassmorphism theme)
-│
-└── 📁 js/
-    └── script.js              # Main JavaScript file
-```
-
----
-
-## 🚀 Projects Showcase
-
-| Project | Description | Tech | Links |
-|---------|-------------|------|-------|
-| **To Do List App** | Smart task manager with alarm system | Android | [Live](https://github.com/draco-go-89/To-Do-List) · [APK](builds/todolist.apk) |
-| **Password Checker** | Password strength analyzer website | HTML/CSS/JS | [Live](https://passwordchecker-v1.vercel.app/) · [GitHub](https://github.com/draco-go-89/passwordchecker) |
-| **Music Player V2** | Simple music player Android app | Android | [APK](builds/Lubo_v4.apk) |
-| **Music Player App** | Password-protected music player | Android | [Drive](https://drive.google.com/drive/folders/1td22oGnj0ltGAP_lg0VnlJzjyEsdTvM-) |
-
----
-
-## 🏁 Getting Started
-
-### Prerequisites
-- Any modern web browser (Chrome, Firefox, Safari, Edge)
-- (Optional) Local server for development (e.g., Live Server extension)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/draco-go-89/Portfolio.git
-   cd Portfolio
-   ```
-
-2. **Open in browser**
-   ```bash
-   # Windows
-   start index.html
-
-   # macOS
-   open index.html
-
-   # Linux
-   xdg-open index.html
-   ```
-
-   Or simply double-click `index.html` in your file explorer.
-
-3. **Optional: Run with Live Server**
-   ```bash
-   npx live-server
-   # or
-   python -m http.server 8000
-   ```
-
----
-
-## 🌐 Socials
-
-Connect with me across the web:
-
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/___lubolabao.1___)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/lubolabao.1)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/draco-go-89)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dhrubo-basumatary-82279934b)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@lubolabao)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**
-
-```
-MIT License
-
-Copyright (c) 2026 Dhrubo Basumatary
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
-
----
-
-this README isn't fully up-to-date because im so lazy sorry!
-
-<div align="center">
-
-**⭐ Star this repo if you found it helpful!**
-
-*Built with 💜 by [Dhrubo Basumatary](https://github.com/draco-go-89)*
-
-</div>
 
