@@ -169,6 +169,37 @@ function updateBird() {
 }
 updateBird();
 
+function hideLoadingScreen() {
+  const loading = document.getElementById('loading-screen');
+  if (!loading) return;
+
+  // Minimum visible time for nicer UX
+  const minVisibleMs = 600;
+
+  const startedAt = Number(loading.dataset.startedAt || 0);
+  const elapsed = startedAt ? (performance.now() - startedAt) : minVisibleMs;
+
+  const wait = Math.max(0, minVisibleMs - elapsed);
+
+  window.setTimeout(() => {
+    loading.classList.add('is-hidden');
+  }, wait);
+}
+
+// Loading screen: start timer immediately
+document.addEventListener('DOMContentLoaded', () => {
+  const loading = document.getElementById('loading-screen');
+  if (loading) loading.dataset.startedAt = String(performance.now());
+});
+
+// Hide on full load
+window.addEventListener('load', () => {
+  hideLoadingScreen();
+});
+
+// Fallback (in case load event is delayed by something)
+window.setTimeout(() => hideLoadingScreen(), 6000);
+
 // Form submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
