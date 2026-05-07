@@ -3,20 +3,21 @@ let hamburger;
 let navLinks;
 let bird;
 
-// Faah sound globals
+/* Faah sound globals */
 let faahSound = new Audio('assets/Faah.mp3');
 faahSound.preload = 'auto';
 faahSound.volume = 0.7;
-let lastFaahTime = 0;
-const FAH_MIN_INTERVAL = 2000; // 2 seconds debounce
 
-// Play Faah sound with debounce (global function)
+// Play Faah immediately on every click (no debounce)
+// Ensures: 1 click => rings now, next click => rings again.
 function playFaah() {
-  const now = Date.now();
-  if (now - lastFaahTime > FAH_MIN_INTERVAL) {
+  try {
+    // Restart the audio for consistent, instant response
+    faahSound.pause();
     faahSound.currentTime = 0;
     faahSound.play().catch(e => console.log('Audio play failed:', e));
-    lastFaahTime = now;
+  } catch (e) {
+    console.log('Audio play failed:', e);
   }
 }
 
@@ -30,8 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (bird) {
     bird.style.pointerEvents = 'auto';
     bird.style.cursor = 'pointer';
-    bird.addEventListener('click', playFaah);
-    bird.addEventListener('touchstart', playFaah);
+
+    // Use only pointerdown to avoid duplicate firing on touch devices.
+    // (click + pointerdown can both fire on some browsers)
+    bird.addEventListener('pointerdown', playFaah, { passive: true });
   }
   
   if (hamburger && navLinks) {
