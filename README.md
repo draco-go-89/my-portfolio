@@ -1,179 +1,142 @@
-﻿<div align="center">
+﻿# Dhrubo Basumatary — Portfolio
 
-# 🚀 Dhrubo Basumatary — Portfolio
-
-**A modern, glassmorphism-inspired personal portfolio website showcasing projects, skills, and contact information.**
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
-
-</div>
+Simple, classic README for the Portfolio project.
 
 ---
 
-## 📋 Table of Contents
+## What is this?
 
-- [About](#-about)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Projects Showcase](#-projects-showcase)
-- [Getting Started](#-getting-started)
-- [Socials](#-socials)
-- [License](#-license)
+This is a personal portfolio website made with:
+- **HTML**
+- **CSS** (glassmorphism / modern light blue theme)
+- **JavaScript** (small interactions like navbar, scrolling, and effects)
+- **Bootstrap** (linked, but most styling is custom)
 
----
-
-## 🎯 About
-
-This is my personal portfolio website built to showcase my journey as a **B.Tech Computer Science and Engineering** student and software developer. The site features a sleek **glassmorphism UI** with smooth animations, responsive design, and a curated collection of my projects.
-
-> *"I thrive on vibe coding — combining my technical foundation in Python, C++, and Java with modern AI-driven workflows to build projects at lightning speed."*
+The page is **index.html** and it showcases projects, skills, and contact.
 
 ---
 
-## 🛠️ Tech Stack
+## Pages
 
-**Frontend**
-- HTML5 Semantic Markup
-- CSS3 (Custom Properties, Flexbox, Grid, Animations)
-- JavaScript (ES6+, DOM API, Intersection Observer)
-- Bootstrap 5.3.3 (Grid & Utilities)
+### 1) `index.html`
+Main portfolio landing page.
 
-**Design**
-- Glassmorphism aesthetic
-- Gradient color scheme (Blue/Purple tones)
-- Custom SVG social icons
+Sections:
+- Home (hero)
+- About
+- Projects
+- Skills
+- Contact
 
-**Tools**
-- Git & GitHub
-- VS Code
+### 2) `videos.html`
+Videos folder page (lists project videos from `assets/*.mp4`).
 
 ---
 
-## 📁 Project Structure
+## Features (high level)
+
+- Responsive layout
+- Glassmorphism UI cards
+- Navbar with mobile toggle
+- Smooth scrolling for anchor links
+- Loading screen on startup
+- “Back to top” button
+- Bird animation + click sound (`assets/Faah.mp3`)
+- Skill bars animate when the Skills section appears
+
+---
+
+## Project structure
 
 ```
 Portfolio/
-├── 📄 index.html              # Main portfolio page
-├── 📄 README.md               # Project documentation
-├── 📄 .gitignore              # Git ignore rules
-│
-├── 📁 assets/                 # Image assets
-│   ├── dhrubo.jpeg            # Profile photo
-│   ├── palette.png            # Color palette reference
-│   ├── todo.jpeg              # To-Do List screenshot
-│   ├── passwordchecker.png    # Password Checker screenshot
-│   └── musicplayer.jpeg       # Music Player screenshot
-│
-├── 📁 builds/                 # Compiled APK builds (gitignored)
-│   ├── Lubo_v4.apk            # Music Player V2
-│   ├── musicplayer1.apk       # Music Player App
-│   └── todolist.apk           # To-Do List App
-│
-├── 📁 css/                    # Stylesheets
-│   └── style.css              # Main stylesheet (glassmorphism theme)
-│
-└── 📁 js/
-    └── script.js              # Main JavaScript file
+├── index.html
+├── videos.html
+├── README.md
+├── TODO.md
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── assets/
+│   ├── *.png / *.jpeg / *.jpg
+│   ├── *.mp4
+│   └── Faah.mp3
+└── builds/
+    └── *.apk
 ```
 
----
-
-## 🚀 Projects Showcase
-
-| Project | Description | Tech | Links |
-|---------|-------------|------|-------|
-| **To Do List App** | Smart task manager with alarm system | Android | [Live](https://github.com/draco-go-89/To-Do-List) · [APK](builds/todolist.apk) |
-| **Password Checker** | Password strength analyzer website | HTML/CSS/JS | [Live](https://passwordchecker-v1.vercel.app/) · [GitHub](https://github.com/draco-go-89/passwordchecker) |
-| **Music Player V2** | Simple music player Android app | Android | [APK](builds/Lubo_v4.apk) |
-| **Music Player App** | Password-protected music player | Android | [Drive](https://drive.google.com/drive/folders/1td22oGnj0ltGAP_lg0VnlJzjyEsdTvM-) |
+Note: `builds/` contains APK files (they are typically kept out of git by `.gitignore`).
 
 ---
 
-## 🏁 Getting Started
+## How to run locally
 
-### Prerequisites
-- Any modern web browser (Chrome, Firefox, Safari, Edge)
-- (Optional) Local server for development (e.g., Live Server extension)
+### Option A: Double click
+- Open `index.html` in your browser.
 
-### Installation
+### Option B: Use a simple local server (recommended)
+From the project folder:
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/draco-go-89/Portfolio.git
-   cd Portfolio
-   ```
+- Python:
+  ```bash
+  python -m http.server 8000
+  ```
+  Then open: http://localhost:8000
 
-2. **Open in browser**
-   ```bash
-   # Windows
-   start index.html
-
-   # macOS
-   open index.html
-
-   # Linux
-   xdg-open index.html
-   ```
-
-   Or simply double-click `index.html` in your file explorer.
-
-3. **Optional: Run with Live Server**
-   ```bash
-   npx live-server
-   # or
-   python -m http.server 8000
-   ```
+- Node (if you use a tool like live-server):
+  ```bash
+  npx live-server
+  ```
 
 ---
 
-## 🌐 Socials
+## Projects shown on the site
 
-Connect with me across the web:
+`index.html` includes these items in the Projects section:
 
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/___lubolabao.1___)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/lubolabao.1)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/draco-go-89)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dhrubo-basumatary-82279934b)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@lubolabao)
+1. **To Do List App**
+   - Task manager with an alarm system
+   - Download: `builds/todolist.apk`
 
----
+2. **Password Checker**
+   - Password strength analyzer (Normal / Strong / Hard)
 
-## 📄 License
+3. **Music Player V2**
+   - Download: `builds/Lubo_v4.apk`
 
-This project is licensed under the **MIT License**
+4. **Music Player App**
+   - Password-protected music player
 
-```
-MIT License
+5. **Palette Generator**
+   - Color palette generator website
 
-Copyright (c) 2026 Dhrubo Basumatary
+6. **Alarm App**
+   - Unique alarm app with math puzzles
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
+7. **Videos Folder**
+   - Opens `videos.html`
 
 ---
 
-this README isn't fully up-to-date because im so lazy sorry! 
-last update 03-05-26
+## Files that matter most
 
-<div align="center">
+- **`index.html`**: layout + projects + section anchors
+- **`videos.html`**: video cards (uses `assets/*.mp4`)
+- **`css/style.css`**: styling and theme
+- **`js/script.js`**: navbar toggle, smooth scrolling, loading screen, skill bar animation, back-to-top, bird animation, form submit demo
 
-**⭐ Star this repo if you found it helpful!**
+---
 
-*Built with 💜 by [Dhrubo Basumatary](https://github.com/draco-go-89)*
+## Credits / License
 
-</div>
+- UI theme is custom.
+- License: **MIT** (see `LICENSE` in repo if present).
+
+---
+
+## Quick links (from the site)
+
+- Projects are linked from the Projects section on `index.html`.
+- Videos page is `videos.html`.
 
