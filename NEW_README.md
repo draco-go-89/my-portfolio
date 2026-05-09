@@ -29,7 +29,8 @@ Sections:
 - Contact
 
 ### 2) `videos.html`
-A small “Videos Folder” page that lists project videos from `/assets/*.mp4`.
+Videos folder page (lists project videos from `assets/*.mp4`).
+
 
 ---
 
@@ -91,12 +92,41 @@ From the project folder:
 
 ---
 
+## Projects shown on the site
+
+`index.html` includes these items in the Projects section:
+
+1. **To Do List App**
+   - Task manager with an alarm system
+   - Download: `builds/todolist.apk`
+
+2. **Password Checker**
+   - Password strength analyzer (Normal / Strong / Hard)
+
+3. **Music Player V2**
+   - Download: `builds/Lubo_v4.apk`
+
+4. **Music Player App**
+   - Password-protected music player
+
+5. **Palette Generator**
+   - Color palette generator website
+
+6. **Alarm App**
+   - Unique alarm app with math puzzles
+   - (Install link is provided from the site)
+
+7. **Videos Folder**
+   - Opens `videos.html`
+
+---
+
 ## Files that matter most
 
-- **`index.html`**: layout + links to sections/projects
+- **`index.html`**: layout + projects + section anchors
 - **`videos.html`**: video cards (uses `assets/*.mp4`)
-- **`css/style.css`**: all styling and theme
-- **`js/script.js`**: navbar toggle, animations, loading screen, skill bar animation, form submit demo
+- **`css/style.css`**: styling and theme
+- **`js/script.js`**: navbar toggle, smooth scrolling, loading screen, skill bar animation, back-to-top, bird animation, form submit demo
 
 ---
 
@@ -111,4 +141,5 @@ From the project folder:
 
 - Projects are linked from the Projects section on `index.html`.
 - Videos page is `videos.html`.
+
 
