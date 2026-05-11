@@ -214,7 +214,7 @@ if (contactForm) {
     const message = document.querySelector('#message').value.trim();
     
     if (name && email && message) {
-      alert('Thank you for your message! This is a demo - form will be sent in production.');
+      alert('Thank you for your message bro! This is just a demo form, I don recieve any messages.');
       this.reset();
     } else {
       alert('Please fill in all fields.');
