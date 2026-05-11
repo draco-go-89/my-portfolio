@@ -177,17 +177,19 @@ a { text-decoration: none; }
 
 /* About glass panels */
 .about-text {
-  background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(16,185,129,0.10));
-  border-color: rgba(59,130,246,0.25);
+  /* Luxury tint: requested #7C8ED2 */
+  background: linear-gradient(135deg, rgba(124,142,210,0.28), rgba(124,142,210,0.10));
+  border-color: rgba(124,142,210,0.40);
 
-  background: var(--glass-bg);
+
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
-  border: var(--glass-border);
+  border: 1px solid rgba(124,142,210,0.35);
   border-radius: var(--radius-md);
   padding: 2.5rem;
   margin: 1rem 0;
 }
+
 
 .profile-img {
   width: 100%;
@@ -387,7 +389,8 @@ a { text-decoration: none; }
   text-align: center;
   position: relative;
   padding-top: 80px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, rgba(124,142,210,0.22) 0%, rgba(124,142,210,0.10) 100%);
+
 }
 
 .hero-content {
