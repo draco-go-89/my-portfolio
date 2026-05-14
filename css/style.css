@@ -6,14 +6,14 @@
 /* ── CSS Variables ── */
 :root {
   --primary:        #000000;
-  --primary-light:  #ea1111;
+  --primary-light:  #0ad9fe;
   --primary-dark:   #2149cb;
   --accent:         #4a78ec;
   --bg:             #f8fafc;
   --bg-warm:        #e2e8f0;
   --text-dark:      #0f172a;
   --text-body:      #475569;
-  --text-light:     #0db7eb;
+  --text-light:     #0db7eba7;
 
   --glass-bg:       rgba(255, 255, 255, 0.25);
   --glass-bg-dark:  rgba(255, 255, 255, 0.15);
