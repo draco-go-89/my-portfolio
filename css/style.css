@@ -6,20 +6,20 @@
 /* ── CSS Variables ── */
 :root {
   --primary:        #000000;
-  --primary-light:  #4896f6;
-  --primary-dark:   #1e40af;
+  --primary-light:  #ea1111;
+  --primary-dark:   #2149cb;
   --accent:         #4a78ec;
   --bg:             #f8fafc;
   --bg-warm:        #e2e8f0;
   --text-dark:      #0f172a;
   --text-body:      #475569;
-  --text-light:     #94a3b8;
+  --text-light:     #12b7e9;
 
   --glass-bg:       rgba(255, 255, 255, 0.25);
   --glass-bg-dark:  rgba(255, 255, 255, 0.15);
   --glass-border:   rgba(255, 255, 255, 0.3);
-  --glass-shadow:   rgba(59, 131, 246, 0.53);
-  --glass-shadow-lg: rgba(59, 131, 246, 0.781);
+  --glass-shadow:   rgba(79, 139, 235, 0.53);
+  --glass-shadow-lg: rgba(108, 65, 229, 0.491);
   --glass-glow:     rgba(59, 130, 246, 0.3);
   --glass-blur:     blur(30px) saturate(180%);
 
