@@ -74,7 +74,7 @@ body {
 }
 
 .flying-bird:hover {
-  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
+  filter: drop-shadow(0 4px 12px rgba(47, 120, 237, 0.4));
 }
 
 .bird-svg {
