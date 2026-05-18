@@ -4,7 +4,7 @@ let navLinks;
 let bird;
 
 /* Faah sound globals */
-let faahSound = new Audio('assets/Faah.mp3');
+let faahSound = new Audio('assets/sgpwes.mp3');
 faahSound.preload = 'auto';
 faahSound.volume = 0.7;
 
