@@ -7,6 +7,7 @@ Simple, classic README for the Portfolio project.
 ## What is this?
 
 This is a personal portfolio website made with:
+
 - **HTML**
 - **CSS** (glassmorphism / modern light blue theme)
 - **JavaScript** (small interactions like navbar, scrolling, and effects)
@@ -19,16 +20,19 @@ The page is **index.html** and it showcases projects, skills, and contact.
 ## Pages
 
 ### 1) `index.html`
+
 Main portfolio landing page.
 
 Sections:
-- Home (hero)
+
+- Home
 - About
 - Projects
 - Skills
 - Contact
 
 ### 2) `videos.html`
+
 Videos folder page (lists project videos from `assets/*.mp4`).
 
 ---
@@ -41,7 +45,7 @@ Videos folder page (lists project videos from `assets/*.mp4`).
 - Smooth scrolling for anchor links
 - Loading screen on startup
 - “Back to top” button
-- Bird animation + click sound (`assets/Faah.mp3`)
+- Bird animation + click sound 
 - Skill bars animate when the Skills section appears
 
 ---
@@ -73,18 +77,23 @@ Note: `builds/` contains APK files (they are typically kept out of git by `.giti
 ## How to run locally
 
 ### Option A: Double click
+
 - Open `index.html` in your browser.
 
 ### Option B: Use a simple local server (recommended)
+
 From the project folder:
 
 - Python:
+
   ```bash
   python -m http.server 8000
   ```
-  Then open: http://localhost:8000
+
+  Then open: <http://localhost:8000>
 
 - Node (if you use a tool like live-server):
+
   ```bash
   npx live-server
   ```
@@ -122,16 +131,16 @@ From the project folder:
 ## Files that matter most
 
 - **`index.html`**: layout + projects + section anchors
-- **`videos.html`**: video cards (uses `assets/*.mp4`)
+- **`videos.html`**: video card
 - **`css/style.css`**: styling and theme
-- **`js/script.js`**: navbar toggle, smooth scrolling, loading screen, skill bar animation, back-to-top, bird animation, form submit demo
+- **`js/script.js`**: navbar toggle, smooth scrolling, loading screen, skill bar animation, back-to-top, bird animation, form submit
 
 ---
 
 ## Credits / License
 
 - UI theme is custom.
-- License: **MIT** (see `LICENSE` in repo if present).
+- License: **MIT** (I don't have no Liscense).
 
 ---
 
@@ -140,5 +149,6 @@ From the project folder:
 - Projects are linked from the Projects section on `index.html`.
 - Videos page is `videos.html`.
 
-## WEBSITE:
+## WEBSITE
+
 [Website link](https://draco-go-89.github.io/my-portfolio/)
