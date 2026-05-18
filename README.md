@@ -6,7 +6,7 @@ Simple, classic README for the Portfolio project.
 
 ## What is this?
 
-This is a personal portfolio website made with:
+This is a personal **portfolio** website made with:
 
 - **HTML**
 - **CSS** (glassmorphism / modern light blue theme)
@@ -21,7 +21,7 @@ The page is **index.html** and it showcases projects, skills, and contact.
 
 ### 1) `index.html`
 
-Main portfolio landing page.
+Main **portfolio** landing page.
 
 Sections:
 
