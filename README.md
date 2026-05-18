@@ -105,7 +105,7 @@ From the project folder:
 `index.html` includes these items in the Projects section:
 
 1. **To Do List App**
-   - A modern Task manager app with an alarm system 
+   - A modern Task manager app with an alarm system needed update but ima busy now
 
 2. **Password Checker**
    - Password strength analyzer (Normal / Strong / Hard) and Password checker toooooooooooooooooooooooooooooo
