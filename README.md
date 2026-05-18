@@ -105,23 +105,22 @@ From the project folder:
 `index.html` includes these items in the Projects section:
 
 1. **To Do List App**
-   - Task manager with an alarm system
-   - Download: `builds/todolist.apk`
+   - A modern Task manager app with an alarm system 
 
 2. **Password Checker**
-   - Password strength analyzer (Normal / Strong / Hard)
+   - Password strength analyzer (Normal / Strong / Hard) and Password checker toooooooooooooooooooooooooooooo
 
 3. **Music Player V2**
-   - Download: `builds/Lubo_v4.apk`
+   - A simple Music Player Appp
 
 4. **Music Player App**
    - Password-protected music player
 
 5. **Palette Generator**
-   - Color palette generator website
+   - Color palette generator
 
 6. **Alarm App**
-   - Unique alarm app with math puzzles
+   - Unique alarm app with math puzzles\ Force you to wake up and focus on yo things
 
 7. **Videos Folder**
    - Opens `videos.html`
