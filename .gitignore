@@ -40,3 +40,7 @@ docs/TODO*.md
 # Large media
 *.mov
 *.avi
+
+# Backup / temporary HTML
+_loading_disabled_index_backup.html
+
