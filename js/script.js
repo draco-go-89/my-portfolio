@@ -174,24 +174,29 @@ updateBird();
 
 
 
-// Form submission
-const contactForm = document.querySelector('.contact-form');
+// Form submission: open user's email client (mailto)
+const contactForm = document.querySelector('#contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Simple validation
-    const name = document.querySelector('#name').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const message = document.querySelector('#message').value.trim();
-    
-    if (name && email && message) {
-      alert('Thank you for your message bro! This is just a demo form, I don recieve any messages.');
-      this.reset();
-    } else {
+    const name = document.querySelector('#name')?.value?.trim() || '';
+    const email = document.querySelector('#email')?.value?.trim() || '';
+    const message = document.querySelector('#message')?.value?.trim() || '';
+
+    if (!name || !email || !message) {
+      e.preventDefault();
       alert('Please fill in all fields.');
+      return;
     }
+
+    const to = 'lubos8999@gmail.com';
+    const subject = `${name} - Feedback`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    e.preventDefault();
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
 
 // Animate skill bars on scroll
 const observerOptions = {

@@ -1,6 +1,8 @@
-# TODO Steps for Color Update to Modern Light Blue
+# TODO
 
-- [x] Step 1: Update css/style.css with light blue palette/CSS vars/gradients
-- [ ] Step 2: Test with preview (`start index.html`)
-- [ ] Step 3: Commit/push to branch, update PR
-- [ ] Step 4: Mark complete
+- [x] Inspect existing structure (index.html, css/style.css, js/script.js).
+- [x] Update contact section to “Send Email Feedback” (mailto: lubos8999@gmail.com).
+- [x] Remove demo form alert behavior and wire form to open mail client with pre-filled subject/body.
+- [x] Manual check: submit contact form opens email draft (opens mail client via mailto).
+
+
