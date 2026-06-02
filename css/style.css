@@ -500,7 +500,34 @@ section {
   border-color: var(--primary-light);
 }
 
-/* ── Projects ── */
+/* ── Projects (Bento) ── */
+.projects-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Featured blocks */
+.project-bento-main {
+  grid-column: 1 / span 7;
+  grid-row: span 2;
+}
+
+.project-bento-secondary {
+  grid-column: 8 / span 5;
+  grid-row: span 1;
+}
+
+/* Remaining cards: default sizing */
+.projects-bento > .project-card {
+  grid-column: span 4;
+  grid-row: auto;
+}
+
+/* Fallback: if someone keeps old markup */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -508,6 +535,7 @@ section {
   max-width: 1400px;
   margin: 0 auto;
 }
+
 
 .project-card {
   background: rgba(255, 255, 255, 0.22);
@@ -911,7 +939,19 @@ section {
 
   .hero { padding-top: 60px; }
   .about-content { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
-  .projects-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .projects-bento {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .project-bento-main,
+  .project-bento-secondary {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .projects-bento > .project-card {
+    grid-column: auto;
+  }
+
   .videos-grid { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 70px; }
   .video-info { padding: 1.4rem; }
   .page-header { padding: 120px 0 50px; }
