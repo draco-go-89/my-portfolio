@@ -5,12 +5,13 @@
 
 /* ── CSS Variables ── */
 :root {
-  --primary:        #0c8fe6;
-  --primary-light:  #0ad9fe;
-  --primary-dark:   #2149cb;
-  --accent:         #4a78ec;
+  --primary:        #6c5ce7;
+  --primary-light:  #6c5ce7;
+  --primary-dark:   #6c5ce7;
+  --accent:         #6c5ce7;
+
   --bg:             #f8fafc;
-  --bg-warm:        #e2e8f0;
+  --bg-warm:        #c3cad8;
   --text-dark:      #0f172a;
   --text-body:      #040519;
   --text-light:     #0f2f97a7;
@@ -672,7 +673,7 @@ section {
   outline: none;
   background: rgba(255, 255, 255, 0.95);
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.28);
 }
 
 .submit-btn {
