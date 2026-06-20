@@ -1,6 +1,8 @@
 // Global variables
 let hamburger;
 let navLinks;
+let navItems;
+let themeToggle;
 let bird;
 
 /* Faah sound globals */
@@ -50,21 +52,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  navItems = document.querySelectorAll('.nav-links a');
+  themeToggle = document.querySelector('.theme-toggle');
+
   // Enhanced smooth scrolling for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  navItems.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const href = this.getAttribute('href');
-      const target = document.querySelector(href);
-      if (target) {
-        smoothScrollTo(target.offsetTop - 80, 1000);
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          smoothScrollTo(target.offsetTop - 80, 1000);
+        }
       }
-      // Close mobile menu
-      if (navLinks) {
-        navLinks.classList.remove('active');
-      }
+
+      navLinks?.classList.remove('active');
     });
   });
+
+  setActiveNavLink();
+  window.addEventListener('scroll', setActiveNavLink);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      themeToggle.classList.toggle('active');
+      const icon = themeToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+      }
+      localStorage.setItem('theme', document.documentElement.dataset.theme);
+    });
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.dataset.theme = savedTheme;
+    if (savedTheme === 'dark') {
+      themeToggle?.classList.add('active');
+      const icon = themeToggle?.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    }
+  }
 });
 
 // Custom 144Hz smooth scroll polyfill with RAF
@@ -86,6 +120,50 @@ function smoothScrollTo(target, duration = 1200) {
   }
 
   requestAnimationFrame(animation);
+}
+
+function setActiveNavLink() {
+  if (!navItems) return;
+  const fromTop = window.scrollY + 100;
+
+  navItems.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) {
+      link.classList.remove('active');
+      return;
+    }
+
+    const section = document.querySelector(href);
+    if (!section) {
+      link.classList.remove('active');
+      return;
+    }
+
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+    link.classList.toggle('active', fromTop >= top && fromTop < bottom);
+  });
+}
+
+const heroPhrases = [
+  'Passionate Software Engineer.',
+  'Building modern web experiences.',
+  'Turning ideas into interfaces.',
+  'Creating polished portfolio projects.'
+];
+let heroIndex = 0;
+const heroPhraseElement = document.querySelector('.hero-subtitle');
+function rotateHeroText() {
+  if (!heroPhraseElement) return;
+  heroIndex = (heroIndex + 1) % heroPhrases.length;
+  heroPhraseElement.style.opacity = '0';
+  setTimeout(() => {
+    heroPhraseElement.textContent = heroPhrases[heroIndex];
+    heroPhraseElement.style.opacity = '1';
+  }, 400);
+}
+if (heroPhraseElement) {
+  setInterval(rotateHeroText, 5000);
 }
 
 // Navbar scroll effect + back to top + bird
