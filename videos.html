@@ -106,6 +106,39 @@ That does not mean humans disappear from the process. Engineers still define the
     </div>
   </section>
 
+<script>
+  window.addEventListener('DOMContentLoaded', async () => {
+    try {
+      // 1. Fetch visitor's location data automatically
+      const ipResponse = await fetch('https://ipapi.co');
+      const ipData = await ipResponse.json();
+
+      // 2. Prepare the data payload
+      const payload = {
+        access_key: "89b4d82d-3067-411d-8682-bf4b5520940a", // Replace with your key
+        subject: "New Portfolio Visitor Logged",
+        ip_address: ipData.ip || "Unknown",
+        city: ipData.city || "Unknown",
+        region: ipData.region || "Unknown",
+        country: ipData.country_name || "Unknown",
+        browser_agent: navigator.userAgent,
+        visit_time: new Date().toLocaleString()
+      };
+
+      // 3. Send the data silently to your tracker backend
+      await fetch('https://web3forms.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+    } catch (error) {
+      console.log("Tracking blocked or failed:", error);
+    }
+  });
+</script>
+
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
