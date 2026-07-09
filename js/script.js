@@ -117,9 +117,7 @@ function setActiveNavLink() {
 
 const heroPhrases = [
   'Passionate Software Engineer.',
-  'Building modern web experiences.',
-  'Turning ideas into interfaces.',
-  'Creating polished portfolio projects.'
+  
 ];
 let heroIndex = 0;
 const heroPhraseElement = document.querySelector('.hero-subtitle');
