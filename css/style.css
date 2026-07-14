@@ -55,7 +55,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 13px;
   scroll-behavior: smooth;
   scroll-padding-top: clamp(70px, 10vh, 100px);
   will-change: scroll-position;
@@ -64,7 +64,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ariel', sans-serif;
   line-height: 1.6;
   color: var(--text-body);
   overflow-x: hidden;
