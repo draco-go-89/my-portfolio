@@ -247,3 +247,140 @@ if (videosSection) {
   videoObserver.observe(videosSection);
 }
 
+/* ===========================================
+   MUSIC PLAYER — Interactive Logic
+   Glassmorphism Popup with Audio Controls
+   =========================================== */
+
+// Wait for DOM to be fully loaded before binding player events
+document.addEventListener('DOMContentLoaded', function () {
+
+  // --- Grab all music player DOM elements ---
+  const musicToggleBtn = document.getElementById('musicToggleBtn');   // Floating music button
+  const musicModal     = document.getElementById('musicPlayerModal');  // Overlay + popup
+  const closeBtn       = document.getElementById('closeMusicPlayer');  // Close (×) button
+  const audio          = document.getElementById('musicAudio');        // <audio> element
+  const playPauseBtn   = document.getElementById('playPauseBtn');     // Play/Pause button
+  const progressSlider = document.getElementById('progressSlider');    // Seek bar
+  const currentTimeEl  = document.getElementById('currentTime');       // Current time label
+  const durationEl     = document.getElementById('duration');          // Total duration label
+  const volumeSlider   = document.getElementById('volumeSlider');      // Volume slider
+  const artCircle      = document.querySelector('.music-art-circle');  // Album art circle
+
+  // --- Helper: format seconds to MM:SS ---
+  function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return '00:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  }
+
+  // --- 1. Toggle modal on floating button click ---
+  if (musicToggleBtn && musicModal) {
+    musicToggleBtn.addEventListener('click', function () {
+      // Show the overlay by adding 'active' class
+      musicModal.classList.add('active');
+    });
+  }
+
+  // --- 2. Close modal when close button is clicked ---
+  if (closeBtn && musicModal) {
+    closeBtn.addEventListener('click', function () {
+      musicModal.classList.remove('active');
+      // If music is playing, pause it when closing modal
+      if (audio && !audio.paused) {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        artCircle.classList.remove('spinning');
+      }
+    });
+  }
+
+  // --- 3. Close modal when clicking outside the popup (on the overlay) ---
+  if (musicModal) {
+    musicModal.addEventListener('click', function () {
+      musicModal.classList.remove('active');
+      if (audio && !audio.paused) {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        artCircle.classList.remove('spinning');
+      }
+    });
+  }
+
+  // --- 4. Play/Pause toggle ---
+  if (playPauseBtn && audio) {
+    playPauseBtn.addEventListener('click', function () {
+      if (audio.paused) {
+        // Play the audio
+        audio.play().catch(function (err) {
+          // If no song file added yet, show friendly message in console
+          console.warn('Music player: No audio source loaded yet. Add a song file to play.');
+        });
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        artCircle.classList.add('spinning');
+      } else {
+        // Pause the audio
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        artCircle.classList.remove('spinning');
+      }
+    });
+  }
+
+  // --- 5. Update progress bar + time as audio plays ---
+  if (audio && progressSlider && currentTimeEl && durationEl) {
+    audio.addEventListener('timeupdate', function () {
+      // Calculate progress percentage
+      const progress = (audio.currentTime / audio.duration) * 100;
+      if (!isNaN(progress)) {
+        progressSlider.value = progress;
+      }
+      // Update time labels
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      durationEl.textContent   = formatTime(audio.duration);
+    });
+
+    // --- 6. Seek when user drags the progress slider ---
+    progressSlider.addEventListener('input', function () {
+      const seekTime = (this.value / 100) * audio.duration;
+      if (!isNaN(seekTime)) {
+        audio.currentTime = seekTime;
+      }
+    });
+  }
+
+  // --- 7. Set duration when audio metadata loads ---
+  if (audio && durationEl) {
+    audio.addEventListener('loadedmetadata', function () {
+      durationEl.textContent = formatTime(audio.duration);
+    });
+  }
+
+  // --- 8. When audio ends, reset play button and progress ---
+  if (audio && playPauseBtn && progressSlider && currentTimeEl && artCircle) {
+    audio.addEventListener('ended', function () {
+      playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+      progressSlider.value = 0;
+      currentTimeEl.textContent = '00:00';
+      artCircle.classList.remove('spinning');
+    });
+  }
+
+  // --- 9. Volume control ---
+  if (volumeSlider && audio) {
+    volumeSlider.addEventListener('input', function () {
+      // Volume range: 0 to 1 (slider gives 0–100)
+      audio.volume = this.value / 100;
+    });
+  }
+
+  // --- 10. If no audio source, show a placeholder state ---
+  // The placeholder info is already in the HTML; this just prevents console errors
+  if (audio) {
+    // No source added yet — that's fine, user will add later
+    audio.volume = (volumeSlider ? volumeSlider.value : 70) / 100;
+  }
+
+});
+
