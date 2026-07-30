@@ -475,6 +475,7 @@ a { text-decoration: none; }
 section {
   padding: 100px 0;
   position: relative;
+  scroll-margin-top: clamp(70px, 8vh, 90px);
 }
 
 .section-title {
