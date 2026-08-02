@@ -10,13 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
   navLinks = document.querySelector('.nav-links');
   
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
     });
     
     // Close on outside click
     document.addEventListener('click', (e) => {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
         navLinks.classList.remove('active');
       }
     });
