@@ -259,7 +259,7 @@ a { text-decoration: none; }
 
 /* ── Navbar ── */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   height: 60px;
   width: 100%;
