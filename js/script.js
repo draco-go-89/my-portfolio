@@ -119,9 +119,8 @@ function setActiveNavLink() {
 }
 
 const heroPhrases = [
-  'Passionate Software Engineer.',
-  
-];
+  'Software Engineer',
+];  //Software Engineer, Web Developer, and more 1 second delay between each phrase
 let heroIndex = 0;
 const heroPhraseElement = document.querySelector('.hero-subtitle');
 function rotateHeroText() {
@@ -318,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Play the audio
         audio.play().catch(function (err) {
           // If no song file added yet, show friendly message in console
-          console.warn('Music player: No audio source loaded yet. Add a song file to play.');
+          console.warn('Music player: No audio source loaded yet. Let Boss add a song file to play.');
         });
         playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
         artCircle.classList.add('spinning');
