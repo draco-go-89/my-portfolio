@@ -1429,7 +1429,7 @@ section {
 
 /* Spin animation when music is playing */
 .music-art-circle.spinning {
-  animation: spinDisc 6s linear infinite;
+  animation: spinDisc 4s linear infinite;
 }
 
 @keyframes spinDisc {
