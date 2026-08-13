@@ -1660,3 +1660,15 @@ section {
   }
 }
 
+/* Custom Navigation Links Styling ok you can disable it to make it like before, here the problem is that it doesnt work for laptop */
+.nav-links { 
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 0.1rem;
+  width: 30%;
+  height: 600%;
+  padding: 0.9rem 0.91rem;
+  background: rgb(91, 201, 252);
+  border-radius: var(--radius-sm);
+}
