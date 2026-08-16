@@ -31,11 +31,12 @@ build/
 .env.production
 
 # Local planning / temp files
-TODO*.md
-docs/TODO*.md
+*TODO.md
+*docs/TODO.md
 *.tmp
 *.temp
 *.bak
+docs/*.md
 
 # Large media
 *.mov
