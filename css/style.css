@@ -1572,7 +1572,7 @@ section {
 }
 
 .music-header i {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-bottom: 0.3rem;
   background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.6));
   -webkit-background-clip: text;
@@ -1610,9 +1610,9 @@ section {
 
   /* Watercolor gradient — soft, blended pastel colors */
   background: linear-gradient(135deg,
-      rgba(124, 142, 210, 0.7),
-      rgba(251, 113, 133, 0.5),
-      rgba(34, 211, 238, 0.4),
+      rgb(91, 123, 240),
+      rgba(127, 9, 106, 0.979),
+      rgb(4, 101, 116),
       rgba(167, 139, 250, 0.5));
 
   /* Watercolor blur/softness effect */
