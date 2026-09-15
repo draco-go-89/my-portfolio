@@ -1891,3 +1891,10 @@ section {
   background: rgb(91, 201, 252);
   border-radius: var(--radius-sm);
 }
+
+#apps {
+  text-align: center;
+  font-size: 160%;
+  font-weight: 600;
+  font-style: var(--primary);
+}
