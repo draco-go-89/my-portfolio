@@ -119,7 +119,7 @@ function setActiveNavLink() {
 }
 
 const heroPhrases = [
-  'Software Engineer',
+  '   ',   //Add here SWE.
 ];  //Software Engineer, Web Developer, and more 1 second delay between each phrase
 let heroIndex = 0;
 const heroPhraseElement = document.querySelector('.hero-subtitle');
