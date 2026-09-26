@@ -119,7 +119,7 @@ function setActiveNavLink() {
 }
 
 const heroPhrases = [
-  'SWE',   //Add here SWE.
+  'Lubo Labao',   //Add here SWE.
 ];  //Software Engineer, Web Developer, and more 1 second delay between each phrase
 let heroIndex = 0;
 const heroPhraseElement = document.querySelector('.hero-subtitle');
