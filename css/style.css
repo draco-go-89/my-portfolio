@@ -311,7 +311,7 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(16, 185, 129, 0.3);
+  text-shadow: 0 4px 20px rgb(1, 94, 243), 0 0 40px rgba(16, 185, 129, 0.3);
   letter-spacing: -0.5px;
   transition: var(--transition);
 }
@@ -1888,7 +1888,7 @@ section {
   width: 30%;
   height: 700%;
   padding: 0.9rem 0.91rem;
-  background: rgb(91, 201, 252);
+  background: rgba(128, 155, 255, 0.431);
   border-radius: var(--radius-sm);
 }
 
