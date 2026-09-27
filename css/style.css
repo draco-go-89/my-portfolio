@@ -1886,7 +1886,7 @@ section {
   align-items: center;
   gap: 0.1rem;
   width: 30%;
-  height: 600%;
+  height: 800%;
   padding: 0.9rem 0.91rem;
   background: rgba(128, 155, 255, 0.431);
   border-radius: var(--radius-sm);
