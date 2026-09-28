@@ -118,9 +118,9 @@ function setActiveNavLink() {
   });
 }
 
-const heroPhrases = [
-  'Lubo Labao',   //Add here SWE.
-];  //Software Engineer, Web Developer, and more 1 second delay between each phrase
+// const heroPhrases = [
+//   'Lubo Labao',   //Add here SWE.
+// ];  //Software Engineer, Web Developer, and more 1 second delay between each phrase
 let heroIndex = 0;
 const heroPhraseElement = document.querySelector('.hero-subtitle');
 function rotateHeroText() {
