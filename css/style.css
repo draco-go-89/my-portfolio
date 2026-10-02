@@ -627,7 +627,7 @@ section {
 
 .project-card:hover {
   /* transform: translateY(-4px); */
-  transform: rotate(360deg);
+  transform: rotate(130deg);
   background: rgba(255, 255, 255, 0.22);
   box-shadow: 0 16px 40px rgba(59, 130, 246, 0.14);
 }
