@@ -815,7 +815,7 @@ section {
 .submit-btn:hover {
   /* enable this comment and make the 2nd one comment to stop rotating */
   /* transform: translateY(-4px) scale(1.02); */
-  transform: translateY(-450px) scale(1.02) rotate(360deg);
+  transform: translateY(-460px) scale(1.02) rotate(720deg);
   box-shadow: 0 20px 60px rgba(59, 130, 246, 0.6);
 }
 
