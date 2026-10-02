@@ -1042,8 +1042,8 @@ section {
 
 .back-btn {
   position: fixed;
-  top: 90px;
-  left: 28px;
+  top: 70px;
+  left: 15px;
   z-index: 1100;
 
   /* Small circular button */
@@ -1076,10 +1076,10 @@ section {
 }
 
 .back-btn:hover {
-  transform: scale(1.12) translateY(-3px);
+  transform: rotate(-360deg);
   box-shadow: 0 10px 30px rgba(124, 142, 210, 0.4), 0 0 50px rgba(251, 113, 133, 0.2);
   background: linear-gradient(135deg, rgba(124, 142, 210, 0.8), rgba(251, 113, 133, 0.5), rgba(34, 211, 238, 0.4));
-  color: #fff;
+  color: #ffffff;
 }
 
 .back-btn i {
@@ -1088,8 +1088,8 @@ section {
 
 .videos-section .back-btn {
   position: fixed;
-  top: 90px;
-  left: 28px;
+  top: 70px;
+  left: 15px;
   z-index: 1100;
 }
 
@@ -1358,7 +1358,7 @@ section {
 }
 
 .back-to-top:hover {
-  transform: translateY(-5px) scale(1.1);
+  transform: translateY(-300px) rotate(360deg) scale(9.1);
   box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6);
 }
 
@@ -1424,11 +1424,17 @@ section {
 }
 
 /* Subtle floating animation for the button */
-.music-float-btn:hover {
+/* .music-float-btn:hover {
   transform: scale(1.12) translateY(-3px);
   box-shadow: 0 10px 30px rgba(124, 142, 210, 0.4), 0 0 50px rgba(251, 113, 133, 0.2);
   background: linear-gradient(135deg, rgba(124, 142, 210, 0.8), rgba(251, 113, 133, 0.5), rgba(34, 211, 238, 0.4));
   color: #fff;
+} */
+
+.music-float-btn:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 10px 30px rgba(124, 142, 210, 0.4), 0 0 50px rgba(251, 113, 133, 0.2);
+  background: linear-gradient(335deg, rgba(124, 142, 210, 0.8), rgba(251, 113, 133, 0.5), rgba(34, 211, 238, 0.4));
 }
 
 /* Pulsing ring effect for the floating button */
