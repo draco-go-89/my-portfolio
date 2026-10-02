@@ -730,15 +730,15 @@ section {
 /* ── Contact ── */
 .contact-form {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 900px;;
+  margin:  1rem auto;
   padding: 3.5rem 3rem;
   background: rgba(255, 255, 255, 0.95);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+  border: 1px hidden rgb(201, 210, 225);
+  border-radius: var(--radius-sm);
+  /* box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2); */
 }
 
 .form-group {
@@ -800,11 +800,11 @@ section {
   width: 100%;
   padding: 1.2rem;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff;
+  color: #fffffff7;
   border: none;
   border-radius: var(--radius-sm);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 300;
   cursor: pointer;
   transition: var(--transition);
   box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
@@ -813,7 +813,9 @@ section {
 }
 
 .submit-btn:hover {
-  transform: translateY(-4px) scale(1.02);
+  /* enable this comment and make the 2nd one comment to stop rotating */
+  /* transform: translateY(-4px) scale(1.02); */
+  transform: translateY(-450px) scale(1.02) rotate(360deg);
   box-shadow: 0 20px 60px rgba(59, 130, 246, 0.6);
 }
 
@@ -874,7 +876,7 @@ section {
 }
 
 .social-link[href*="instagram"] .social-icon {
-  color: #E4405F;
+  color: #bb00ff;
 }
 
 .social-link[href*="facebook"] .social-icon {
@@ -893,7 +895,7 @@ section {
 }
 
 .social-link[href*="youtube"] .social-icon {
-  color: #FF0000;
+  color: #f33939;
 }
 
 .social-link span {
