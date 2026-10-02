@@ -275,7 +275,7 @@ a {
 
 /* ── Navbar ── */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   height: 60px;
   width: 100%;
@@ -286,6 +286,7 @@ a {
   z-index: 1000;
   padding: 0.7rem 0;
   min-height: 64px;
+  border-radius: var(--radius-sm);
   transition: var(--transition);
   box-shadow: var(--glass-shadow);
 }
@@ -306,19 +307,19 @@ a {
 
 .logo {
   font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-  font-weight: 700;
+  font-weight: 500;
   background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary-light), #06b6d4);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 20px rgb(1, 94, 243), 0 0 40px rgba(16, 185, 129, 0.3);
+  /* -webkit-text-fill-color: transparent; */
+  /* text-shadow: 0 4px 20px rgb(1, 94, 243), 0 0 40px rgba(16, 185, 129, 0.3); */
   letter-spacing: -0.5px;
   transition: var(--transition);
 }
 
 .logo:hover {
-  transform: scale(1.03) rotateY(5deg);
-  text-shadow: 0 4px 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(16, 185, 129, 0.4);
+  transform: scale(5.03) rotateY(960deg);
+  text-shadow: 0 4px 20px rgba(227, 230, 253, 0.471), 0 0 40px rgba(16, 185, 129, 0.4);
 }
 
 .nav-links {
