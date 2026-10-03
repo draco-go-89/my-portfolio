@@ -868,7 +868,7 @@ section {
 .social-icon {
   width: 20px;
   height: 20px;
-  margin-right: 0.75rem;  /* Adjusted margin for better spacing */
+  margin-right: 0.05rem;  /* Adjusted margin for better spacing */
   transition: transform 0.3s;
 }
 
